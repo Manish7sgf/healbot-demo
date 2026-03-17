@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealBot AI — GitHub Test Fixer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"></path>
+        </svg>
+        <div>
+          <h1>HealBot</h1>
+          <p>AI-Powered GitHub Test Fixer</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="status-section">
+        <h2>Latest Test Result</h2>
+        <div id="status-card" class="status-card waiting">
+          <div class="status-indicator">
+            <div class="spinner"></div>
+          </div>
+          <div class="status-content">
+            <p class="status-text">Waiting for test results...</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-section">
+        <div class="detail-grid">
+          <div class="detail-item">
+            <label>Status</label>
+            <p id="detail-status">—</p>
+          </div>
+          <div class="detail-item">
+            <label>Commit</label>
+            <p id="detail-commit">—</p>
+          </div>
+          <div class="detail-item">
+            <label>Branch</label>
+            <p id="detail-branch">—</p>
+          </div>
+          <div class="detail-item">
+            <label>Actor</label>
+            <p id="detail-actor">—</p>
+          </div>
+          <div class="detail-item">
+            <label>Repository</label>
+            <p id="detail-repo">—</p>
+          </div>
+          <div class="detail-item">
+            <label>Timestamp</label>
+            <p id="detail-timestamp">—</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="log-section">
+        <h2>Error Log</h2>
+        <pre id="error-log" class="error-log">No errors logged yet...</pre>
+      </section>
+
+      <section class="fix-section">
+        <h2>AI Fix</h2>
+        <pre id="ai-fix" class="ai-fix">Waiting for AI analysis...</pre>
+      </section>
+
+      <section class="history-section">
+        <h2>History</h2>
+        <div id="history" class="history-list">
+          <p class="empty-state">No history yet...</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 HealBot Demo. Auto-refresh every 2 seconds.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
