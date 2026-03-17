@@ -44,8 +44,10 @@ jobs:
             --arg repo "${{ github.repository }}" \
             --arg timestamp "$(date -u +"%Y-%m-%dT%H:%M:%SZ")" \
             '{status:$status,error_log:$log,commit:$commit,branch:$branch,actor:$actor,repo:$repo,timestamp:$timestamp}' \
-          | curl -s -X POST "$HEALBOT_WEBHOOK_URL" \
-            -H "Content-Type: application/json" -d @-
+          | curl -s -w "\nWebhook HTTP %{http_code}\n" -X POST "$HEALBOT_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -H "ngrok-skip-browser-warning: true" \
+            -d @-
       - name: Fail if tests failed
         if: steps.status.outputs.result == 'failure'
         run: exit 1
