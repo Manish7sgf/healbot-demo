@@ -18,9 +18,12 @@ jobs:
       - name: Run tests
         id: run_tests
         run: |
-          npm test 2>&1 | tee test-output.txt
-          echo "exit_code=${PIPESTATUS[0]}" >> $GITHUB_OUTPUT
-        continue-on-error: true
+          set +e
+          npm test > test-output.txt 2>&1
+          TEST_EXIT=$?
+          cat test-output.txt
+          echo "exit_code=$TEST_EXIT" >> $GITHUB_OUTPUT
+          exit 0
       - name: Set status
         id: status
         run: |
