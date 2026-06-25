@@ -1,5 +1,5 @@
 function toFahrenheit(celsius) {
-  // BUG: wrong formula intentional for demo
+  // BUG: wrong formula — should be (celsius * 9/5) + 32
   return celsius * 9 + 32;
 }
 
